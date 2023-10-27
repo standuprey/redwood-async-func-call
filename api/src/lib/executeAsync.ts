@@ -9,9 +9,9 @@ export const executeAsync = async (args: Record<string, unknown>) => {
   const message = JSON.stringify(args)
   const options = {
     hostname: 'localhost',
-    port: 8911,
+    port: 8910,
     method: 'POST',
-    path: task,
+    path: `.redwood/functions/${task}`,
     headers: {
       'Content-Type': 'application/json',
       'Content-Length': Buffer.byteLength(message),
